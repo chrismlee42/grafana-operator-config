@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: grafana-operator-config
+
+labels:
+  - pairs:
+      app: grafana-operator
+      managedBy: argocd
+      managementCodeGroup: chrismlee42-dev
+      managementCodeProject: grafana-operator-config
+
+namespace: grafana-operator
+
+resources:
+  # Determine latest stable version from https://github.com/grafana/grafana-operator/releases
+  - https://github.com/grafana/grafana-operator/releases/download/v5.19.4/crds.yaml
+  - https://github.com/grafana/grafana-operator/releases/download/v5.19.4/kustomize-namespace_scoped.yaml
+  - namespace.yaml
