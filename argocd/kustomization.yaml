@@ -25,4 +25,4 @@ resources:
   # Determine latest stable version from https://github.com/grafana/grafana-operator/releases
   # - https://github.com/grafana/grafana-operator/releases/download/v5.19.4/crds.yaml
   - https://github.com/grafana/grafana-operator/releases/download/v5.19.4/kustomize-cluster_scoped.yaml
-  - namespace.yaml
+  # - namespace.yaml
